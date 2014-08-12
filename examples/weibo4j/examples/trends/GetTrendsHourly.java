@@ -6,11 +6,12 @@ import weibo4j.Trend;
 import weibo4j.examples.oauth2.Log;
 import weibo4j.model.Trends;
 import weibo4j.model.WeiboException;
+import weibo4j.util.WeiboConfig;
 
 public class GetTrendsHourly {
 
 	public static void main(String[] args) {
-		String access_token = args[0];
+		String access_token =  WeiboConfig.getValue("access_token");
 		Trend tm = new Trend(access_token);
 		try {
 			List<Trends> trends = tm.getTrendsHourly();
